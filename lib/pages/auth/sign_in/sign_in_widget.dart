@@ -75,7 +75,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                   Stack(
                     children: [
                       Image.asset(
-                        'assets/images/magicpattern-blob-1649523227547.png',
+                        'assets/images/blob_bg.png',
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         fit: BoxFit.cover,
                       ),
