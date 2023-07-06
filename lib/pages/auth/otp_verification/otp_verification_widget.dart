@@ -216,7 +216,9 @@ class _OtpVerificationWidgetState extends State<OtpVerificationWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      final phoneNumberVal = widget.phone;
+                      final phoneNumberVal =
+                          "+62"+widget.phone!.replaceAll("-", "");
+
                       if (phoneNumberVal == null ||
                           phoneNumberVal.isEmpty ||
                           !phoneNumberVal.startsWith('+')) {
