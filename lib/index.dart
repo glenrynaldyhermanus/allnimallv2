@@ -4,3 +4,4 @@ export '/pages/home/home_widget.dart' show HomeWidget;
 export '/pages/auth/otp_verification/otp_verification_widget.dart'
     show OtpVerificationWidget;
 export '/pages/friends/friends_widget.dart' show FriendsWidget;
+export '/pages/pet_shop/pet_shop_widget.dart' show PetShopWidget;
