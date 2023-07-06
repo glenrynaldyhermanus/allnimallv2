@@ -97,6 +97,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                           children: [
                             Expanded(
                               child: Container(
+                                height: 48.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -181,6 +182,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                                             ),
                                             filled: true,
                                             fillColor: Colors.transparent,
+                                            contentPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 0.0, 0.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
