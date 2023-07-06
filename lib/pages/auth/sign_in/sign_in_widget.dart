@@ -211,7 +211,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                             FFButtonWidget(
                               onPressed: () async {
                                 final phoneNumberVal =
-                                    _model.textController.text;
+                                    "+62"+_model.textController.text.replaceAll("-", "");
+
+
                                 if (phoneNumberVal == null ||
                                     phoneNumberVal.isEmpty ||
                                     !phoneNumberVal.startsWith('+')) {
