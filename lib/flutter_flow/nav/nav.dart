@@ -115,6 +115,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Friends')
               : FriendsWidget(),
+        ),
+        FFRoute(
+          name: 'PetShop',
+          path: '/petShop',
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'PetShop')
+              : PetShopWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

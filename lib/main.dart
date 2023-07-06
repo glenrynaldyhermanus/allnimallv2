@@ -130,6 +130,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Home': HomeWidget(),
       'Friends': FriendsWidget(),
+      'PetShop': PetShopWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -159,6 +160,14 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.pets_rounded,
+              size: 24.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_bag,
               size: 24.0,
             ),
             label: 'Home',
