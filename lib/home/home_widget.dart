@@ -39,28 +39,53 @@ class _HomeWidgetState extends State<HomeWidget> {
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: Color(0xCDE6E7F9),
           automaticallyImplyLeading: false,
           title: Text(
-            'Page Title',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
+            'Allnimall',
+            style: FlutterFlowTheme.of(context).titleSmall.override(
                   fontFamily: 'RockoUltra',
-                  color: Colors.white,
-                  fontSize: 22.0,
+                  color: FlutterFlowTheme.of(context).primary,
                   useGoogleFonts: false,
                 ),
           ),
           actions: [],
-          centerTitle: false,
-          elevation: 2.0,
+          centerTitle: true,
+          elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [],
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xCDE6E7F9), Color(0xCBFDEAEF)],
+                stops: [0.0, 1.0],
+                begin: AlignmentDirectional(0.0, -1.0),
+                end: AlignmentDirectional(0, 1.0),
+              ),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16.0),
+                    child: Image.network(
+                      'https://picsum.photos/seed/460/600',
+                      width: double.infinity,
+                      height: 180.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

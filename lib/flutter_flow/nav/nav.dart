@@ -100,6 +100,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/home',
           requireAuth: true,
           builder: (context, params) => HomeWidget(),
+        ),
+        FFRoute(
+          name: 'OtpVerification',
+          path: '/otpVerification',
+          builder: (context, params) => OtpVerificationWidget(
+            phone: params.getParam('phone', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
