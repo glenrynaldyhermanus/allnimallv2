@@ -81,14 +81,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => _RouteErrorBuilder(
         state: state,
-        child: appStateNotifier.loggedIn ? HomeWidget() : SignInWidget(),
+        child: appStateNotifier.loggedIn ? NavBarPage() : SignInWidget(),
       ),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomeWidget() : SignInWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : SignInWidget(),
         ),
         FFRoute(
           name: 'SignIn',
@@ -98,7 +98,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
         ),
         FFRoute(
           name: 'OtpVerification',
@@ -111,7 +112,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Friends',
           path: '/friends',
           requireAuth: true,
-          builder: (context, params) => FriendsWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Friends')
+              : FriendsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
