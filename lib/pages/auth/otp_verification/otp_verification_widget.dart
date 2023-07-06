@@ -156,7 +156,7 @@ class _OtpVerificationWidgetState extends State<OtpVerificationWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         GoRouter.of(context).prepareAuthEvent();
@@ -185,13 +185,13 @@ class _OtpVerificationWidgetState extends State<OtpVerificationWidget> {
                           context.goNamedAuth('Home', context.mounted);
                         }
                       },
-                      text: 'Lanjut',
+                      text: 'Masuk',
                       icon: Icon(
                         Icons.arrow_right_alt,
                         size: 15.0,
                       ),
                       options: FFButtonOptions(
-                        width: 230.0,
+                        width: double.infinity,
                         height: 60.0,
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
