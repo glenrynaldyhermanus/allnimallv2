@@ -106,7 +106,7 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 0.0),
+                                24.0, 8.0, 24.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -275,6 +275,10 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                             ]
                                 .divide(SizedBox(width: 16.0))
                                 .around(SizedBox(width: 16.0)),
+                          ),
+                          Divider(
+                            thickness: 1.0,
+                            color: Color(0xFFDEDADA),
                           ),
                         ],
                       );
