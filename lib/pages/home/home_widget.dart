@@ -45,7 +45,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           automaticallyImplyLeading: false,
           title: Text(
             'Allnimall',
-            style: FlutterFlowTheme.of(context).titleSmall.override(
+            style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'RockoUltra',
                   color: FlutterFlowTheme.of(context).primary,
                   useGoogleFonts: false,
