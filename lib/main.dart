@@ -142,7 +142,7 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Home': HomeWidget(),
-      'Friends': FriendsWidget(),
+      'PawCircle': PawCircleWidget(),
       'PetShop': PetShopWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);

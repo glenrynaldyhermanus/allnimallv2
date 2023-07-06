@@ -109,12 +109,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Friends',
-          path: '/friends',
+          name: 'PawCircle',
+          path: '/pawCircle',
           requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Friends')
-              : FriendsWidget(),
+              ? NavBarPage(initialPage: 'PawCircle')
+              : PawCircleWidget(),
         ),
         FFRoute(
           name: 'PetShop',
