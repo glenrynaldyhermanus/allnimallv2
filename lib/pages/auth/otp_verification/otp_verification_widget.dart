@@ -109,7 +109,7 @@ class _OtpVerificationWidgetState extends State<OtpVerificationWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
                     child: Text(
-                      widget.phone!,
+                      '0${widget.phone}',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyLarge,
                     ),
