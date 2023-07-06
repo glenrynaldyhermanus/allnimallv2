@@ -106,18 +106,38 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 20.0, 20.0, 0.0),
+                                24.0, 24.0, 24.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                  child: Image.network(
-                                    columnPetPostsRecord.petPictureUrl,
-                                    width: 36.0,
-                                    height: 36.0,
-                                    fit: BoxFit.cover,
-                                  ),
+                                Builder(
+                                  builder: (context) {
+                                    if (columnPetPostsRecord.petPictureUrl !=
+                                            null &&
+                                        columnPetPostsRecord.petPictureUrl !=
+                                            '') {
+                                      return ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(18.0),
+                                        child: Image.network(
+                                          columnPetPostsRecord.petPictureUrl,
+                                          width: 36.0,
+                                          height: 36.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      );
+                                    } else {
+                                      return Container(
+                                        width: 36.0,
+                                        height: 36.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          shape: BoxShape.circle,
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -154,7 +174,7 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                           if (columnPetPostsRecord.text != '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 20.0, 20.0, 0.0),
+                                  24.0, 16.0, 24.0, 0.0),
                               child: Text(
                                 columnPetPostsRecord.text,
                                 style: FlutterFlowTheme.of(context).bodyLarge,
@@ -163,7 +183,7 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                           if (columnPetPostsRecord.image != '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 0.0),
+                                  0.0, 16.0, 0.0, 0.0),
                               child: Image.network(
                                 columnPetPostsRecord.image,
                                 width: double.infinity,
@@ -201,7 +221,7 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                                         Icons.favorite,
                                         color: FlutterFlowTheme.of(context)
                                             .secondary,
-                                        size: 26.0,
+                                        size: 24.0,
                                       ),
                                       offIcon: Icon(
                                         Icons.favorite_border,
@@ -252,7 +272,9 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                                   },
                                 ),
                               ),
-                            ],
+                            ]
+                                .divide(SizedBox(width: 16.0))
+                                .around(SizedBox(width: 16.0)),
                           ),
                         ],
                       );
