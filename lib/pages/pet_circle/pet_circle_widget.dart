@@ -9,25 +9,25 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
-import 'paw_circle_model.dart';
-export 'paw_circle_model.dart';
+import 'pet_circle_model.dart';
+export 'pet_circle_model.dart';
 
-class PawCircleWidget extends StatefulWidget {
-  const PawCircleWidget({Key? key}) : super(key: key);
+class PetCircleWidget extends StatefulWidget {
+  const PetCircleWidget({Key? key}) : super(key: key);
 
   @override
-  _PawCircleWidgetState createState() => _PawCircleWidgetState();
+  _PetCircleWidgetState createState() => _PetCircleWidgetState();
 }
 
-class _PawCircleWidgetState extends State<PawCircleWidget> {
-  late PawCircleModel _model;
+class _PetCircleWidgetState extends State<PetCircleWidget> {
+  late PetCircleModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PawCircleModel());
+    _model = createModel(context, () => PetCircleModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -50,7 +50,7 @@ class _PawCircleWidgetState extends State<PawCircleWidget> {
           backgroundColor: FlutterFlowTheme.of(context).tertiary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Paw Circle',
+            'Pet Circle',
             style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'RockoUltra',
                   color: FlutterFlowTheme.of(context).primary,

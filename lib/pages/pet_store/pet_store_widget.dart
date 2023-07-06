@@ -4,25 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'pet_shop_model.dart';
-export 'pet_shop_model.dart';
+import 'pet_store_model.dart';
+export 'pet_store_model.dart';
 
-class PetShopWidget extends StatefulWidget {
-  const PetShopWidget({Key? key}) : super(key: key);
+class PetStoreWidget extends StatefulWidget {
+  const PetStoreWidget({Key? key}) : super(key: key);
 
   @override
-  _PetShopWidgetState createState() => _PetShopWidgetState();
+  _PetStoreWidgetState createState() => _PetStoreWidgetState();
 }
 
-class _PetShopWidgetState extends State<PetShopWidget> {
-  late PetShopModel _model;
+class _PetStoreWidgetState extends State<PetStoreWidget> {
+  late PetStoreModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PetShopModel());
+    _model = createModel(context, () => PetStoreModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -45,7 +45,7 @@ class _PetShopWidgetState extends State<PetShopWidget> {
           backgroundColor: FlutterFlowTheme.of(context).tertiary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Pet Shop',
+            'Pet Store',
             style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'RockoUltra',
                   color: FlutterFlowTheme.of(context).primary,

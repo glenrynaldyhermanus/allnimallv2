@@ -129,8 +129,9 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Home': HomeWidget(),
-      'PawCircle': PawCircleWidget(),
-      'PetShop': PetShopWidget(),
+      'PetCircle': PetCircleWidget(),
+      'PetStore': PetStoreWidget(),
+      'PetParent': PetParentWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -168,6 +169,14 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.shopping_bag,
+              size: 24.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.face_6,
               size: 24.0,
             ),
             label: 'Home',
