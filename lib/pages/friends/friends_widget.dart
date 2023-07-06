@@ -50,7 +50,7 @@ class _FriendsWidgetState extends State<FriendsWidget> {
           backgroundColor: FlutterFlowTheme.of(context).tertiary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Pet Friends',
+            'Paw Circle',
             style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'RockoUltra',
                   color: FlutterFlowTheme.of(context).primary,
