@@ -66,7 +66,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(32.0, 64.0, 32.0, 0.0),
                     child: Image.asset(
-                      'assets/images/Artboard1_4.png',
+                      'assets/images/splash.png',
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 64.0,
                       fit: BoxFit.contain,
