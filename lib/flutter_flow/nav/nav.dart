@@ -98,7 +98,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Home',
           path: '/home',
-          requireAuth: true,
           builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
@@ -107,6 +106,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => OtpVerificationWidget(
             phone: params.getParam('phone', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'Friends',
+          path: '/friends',
+          requireAuth: true,
+          builder: (context, params) => FriendsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
