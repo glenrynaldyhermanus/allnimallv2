@@ -9,25 +9,25 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
-import 'friends_model.dart';
-export 'friends_model.dart';
+import 'paw_circle_model.dart';
+export 'paw_circle_model.dart';
 
-class FriendsWidget extends StatefulWidget {
-  const FriendsWidget({Key? key}) : super(key: key);
+class PawCircleWidget extends StatefulWidget {
+  const PawCircleWidget({Key? key}) : super(key: key);
 
   @override
-  _FriendsWidgetState createState() => _FriendsWidgetState();
+  _PawCircleWidgetState createState() => _PawCircleWidgetState();
 }
 
-class _FriendsWidgetState extends State<FriendsWidget> {
-  late FriendsModel _model;
+class _PawCircleWidgetState extends State<PawCircleWidget> {
+  late PawCircleModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FriendsModel());
+    _model = createModel(context, () => PawCircleModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -191,90 +191,96 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    ToggleIcon(
-                                      onPressed: () async {
-                                        final favedByElement =
-                                            currentUserReference;
-                                        final favedByUpdate =
-                                            columnPetPostsRecord.favedBy
-                                                    .contains(favedByElement)
-                                                ? FieldValue.arrayRemove(
-                                                    [favedByElement])
-                                                : FieldValue.arrayUnion(
-                                                    [favedByElement]);
-                                        await columnPetPostsRecord.reference
-                                            .update({
-                                          'faved_by': favedByUpdate,
-                                        });
-                                      },
-                                      value: columnPetPostsRecord.favedBy
-                                          .contains(currentUserReference),
-                                      onIcon: Icon(
-                                        Icons.favorite,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        size: 24.0,
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 8.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      ToggleIcon(
+                                        onPressed: () async {
+                                          final favedByElement =
+                                              currentUserReference;
+                                          final favedByUpdate =
+                                              columnPetPostsRecord
+                                                      .favedBy
+                                                      .contains(favedByElement)
+                                                  ? FieldValue.arrayRemove(
+                                                      [favedByElement])
+                                                  : FieldValue.arrayUnion(
+                                                      [favedByElement]);
+                                          await columnPetPostsRecord.reference
+                                              .update({
+                                            'faved_by': favedByUpdate,
+                                          });
+                                        },
+                                        value: columnPetPostsRecord.favedBy
+                                            .contains(currentUserReference),
+                                        onIcon: Icon(
+                                          Icons.favorite,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          size: 24.0,
+                                        ),
+                                        offIcon: Icon(
+                                          Icons.favorite_border,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          size: 26.0,
+                                        ),
                                       ),
-                                      offIcon: Icon(
-                                        Icons.favorite_border,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        size: 26.0,
-                                      ),
-                                    ),
-                                    if (functions.countFavs(columnPetPostsRecord
-                                            .favedBy
-                                            .toList()) >
-                                        0)
+                                      if (functions.countFavs(
+                                              columnPetPostsRecord.favedBy
+                                                  .toList()) >
+                                          0)
+                                        Text(
+                                          functions
+                                              .countFavs(columnPetPostsRecord
+                                                  .favedBy
+                                                  .toList())
+                                              .toString(),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
                                       Text(
-                                        functions
-                                            .countFavs(columnPetPostsRecord
-                                                .favedBy
-                                                .toList())
-                                            .toString(),
+                                        ' loves',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                       ),
-                                    Text(
-                                      ' loves',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Builder(
-                                builder: (context) => FlutterFlowIconButton(
-                                  borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 60.0,
-                                  icon: Icon(
-                                    Icons.share_sharp,
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    size: 24.0,
+                                    ],
                                   ),
-                                  onPressed: () async {
-                                    await Share.share(
-                                      'www.allnimall.com',
-                                      sharePositionOrigin:
-                                          getWidgetBoundingBox(context),
-                                    );
-                                  },
                                 ),
-                              ),
-                            ]
-                                .divide(SizedBox(width: 16.0))
-                                .around(SizedBox(width: 16.0)),
+                                Builder(
+                                  builder: (context) => FlutterFlowIconButton(
+                                    borderColor: Colors.transparent,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 48.0,
+                                    icon: Icon(
+                                      Icons.share_sharp,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      await Share.share(
+                                        'www.allnimall.com',
+                                        sharePositionOrigin:
+                                            getWidgetBoundingBox(context),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ]
+                                  .divide(SizedBox(width: 16.0))
+                                  .around(SizedBox(width: 16.0)),
+                            ),
                           ),
                           Divider(
                             thickness: 1.0,
