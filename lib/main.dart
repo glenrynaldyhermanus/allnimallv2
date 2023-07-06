@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
@@ -79,32 +80,37 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Allnimall',
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        FFLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      locale: _locale,
-      supportedLocales: const [
-        Locale('id'),
-      ],
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: FlutterFlowTheme.of(context).primary,
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          secondary: FlutterFlowTheme.of(context).primary,
-        ),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        systemNavigationBarColor: FlutterFlowTheme.of(context).primary, // navigation bar color, the one Im looking for
       ),
-      darkTheme: ThemeData(brightness: Brightness.dark),
-      themeMode: _themeMode,
-      routerConfig: _router,
-      builder: (_, child) => DynamicLinksHandler(
-        router: _router,
-        child: child!,
+      child: MaterialApp.router(
+        title: 'Allnimall',
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: [
+          FFLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        locale: _locale,
+        supportedLocales: const [
+          Locale('id'),
+        ],
+        theme: ThemeData(
+          brightness: Brightness.light,
+          primaryColor: FlutterFlowTheme.of(context).primary,
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: FlutterFlowTheme.of(context).primary,
+          ),
+        ),
+        darkTheme: ThemeData(brightness: Brightness.dark),
+        themeMode: _themeMode,
+        routerConfig: _router,
+        builder: (_, child) => DynamicLinksHandler(
+          router: _router,
+          child: child!,
+        ),
       ),
     );
   }
