@@ -9,6 +9,9 @@ import 'schema/customers_record.dart';
 import 'schema/promotions_record.dart';
 import 'schema/pet_posts_record.dart';
 import 'schema/pets_record.dart';
+import 'schema/rangers_record.dart';
+import 'schema/order_groomings_record.dart';
+import 'schema/review_groomings_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -20,6 +23,9 @@ export 'schema/customers_record.dart';
 export 'schema/promotions_record.dart';
 export 'schema/pet_posts_record.dart';
 export 'schema/pets_record.dart';
+export 'schema/rangers_record.dart';
+export 'schema/order_groomings_record.dart';
+export 'schema/review_groomings_record.dart';
 
 /// Functions to query CustomersRecords (as a Stream and as a Future).
 Future<int> queryCustomersRecordCount({
@@ -223,6 +229,162 @@ Future<FFFirestorePage<PetsRecord>> queryPetsRecordPage({
     queryCollectionPage(
       PetsRecord.collection,
       PetsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query RangersRecords (as a Stream and as a Future).
+Future<int> queryRangersRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      RangersRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<RangersRecord>> queryRangersRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      RangersRecord.collection,
+      RangersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<RangersRecord>> queryRangersRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      RangersRecord.collection,
+      RangersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<RangersRecord>> queryRangersRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+    queryCollectionPage(
+      RangersRecord.collection,
+      RangersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query OrderGroomingsRecords (as a Stream and as a Future).
+Future<int> queryOrderGroomingsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      OrderGroomingsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<OrderGroomingsRecord>> queryOrderGroomingsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      OrderGroomingsRecord.collection,
+      OrderGroomingsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<OrderGroomingsRecord>> queryOrderGroomingsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      OrderGroomingsRecord.collection,
+      OrderGroomingsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<OrderGroomingsRecord>> queryOrderGroomingsRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+    queryCollectionPage(
+      OrderGroomingsRecord.collection,
+      OrderGroomingsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query ReviewGroomingsRecords (as a Stream and as a Future).
+Future<int> queryReviewGroomingsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ReviewGroomingsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ReviewGroomingsRecord>> queryReviewGroomingsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ReviewGroomingsRecord.collection,
+      ReviewGroomingsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ReviewGroomingsRecord>> queryReviewGroomingsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ReviewGroomingsRecord.collection,
+      ReviewGroomingsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<ReviewGroomingsRecord>> queryReviewGroomingsRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+    queryCollectionPage(
+      ReviewGroomingsRecord.collection,
+      ReviewGroomingsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

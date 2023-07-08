@@ -109,20 +109,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'PawCircle',
-          path: '/pawCircle',
+          name: 'PetCircle',
+          path: '/petCircle',
           requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'PawCircle')
-              : PawCircleWidget(),
+              ? NavBarPage(initialPage: 'PetCircle')
+              : PetCircleWidget(),
         ),
         FFRoute(
-          name: 'PetShop',
-          path: '/petShop',
+          name: 'PetStore',
+          path: '/petStore',
           requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'PetShop')
-              : PetShopWidget(),
+              ? NavBarPage(initialPage: 'PetStore')
+              : PetStoreWidget(),
+        ),
+        FFRoute(
+          name: 'PetParent',
+          path: '/petParent',
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'PetParent')
+              : PetParentWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -142,8 +142,9 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Home': HomeWidget(),
-      'PawCircle': PawCircleWidget(),
-      'PetShop': PetShopWidget(),
+      'PetCircle': PetCircleWidget(),
+      'PetStore': PetStoreWidget(),
+      'PetParent': PetParentWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -156,7 +157,7 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPageName = tabs.keys.toList()[i];
         }),
         backgroundColor: Color(0xFF3A3D71),
-        selectedItemColor: FlutterFlowTheme.of(context).alternate,
+        selectedItemColor: FlutterFlowTheme.of(context).tertiary,
         unselectedItemColor: Color(0x7FFDEAEF),
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -165,7 +166,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.other_houses_sharp,
-              size: 24.0,
+              size: 32.0,
             ),
             label: 'Home',
             tooltip: '',
@@ -173,7 +174,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.pets_rounded,
-              size: 24.0,
+              size: 32.0,
             ),
             label: 'Home',
             tooltip: '',
@@ -181,7 +182,15 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.shopping_bag,
-              size: 24.0,
+              size: 32.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.face_6,
+              size: 32.0,
             ),
             label: 'Home',
             tooltip: '',
