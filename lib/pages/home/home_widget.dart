@@ -83,7 +83,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16.0),
                     child: Image.network(
-                      'https://picsum.photos/seed/460/600',
+                      'https://i.ibb.co/PCt3fWf/banner1.jpg',
                       width: double.infinity,
                       height: 180.0,
                       fit: BoxFit.cover,
