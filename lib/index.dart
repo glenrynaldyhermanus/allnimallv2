@@ -1,7 +1,7 @@
 // Export pages
-export '/pages/auth/sign_in/sign_in_widget.dart' show SignInWidget;
+export '/pages/auths/sign_in/sign_in_widget.dart' show SignInWidget;
 export '/pages/home/home_widget.dart' show HomeWidget;
-export '/pages/auth/otp_verification/otp_verification_widget.dart'
+export '/pages/auths/otp_verification/otp_verification_widget.dart'
     show OtpVerificationWidget;
 export '/pages/pet_circle/pet_circle_widget.dart' show PetCircleWidget;
 export '/pages/pet_store/pet_store_widget.dart' show PetStoreWidget;

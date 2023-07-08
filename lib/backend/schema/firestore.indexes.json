@@ -1,3 +1,18 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "order_groomings",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "customer_uid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "scheduled_at",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
 }
