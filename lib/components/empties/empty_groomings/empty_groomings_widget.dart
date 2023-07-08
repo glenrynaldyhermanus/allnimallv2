@@ -54,7 +54,7 @@ class _EmptyGroomingsWidgetState extends State<EmptyGroomingsWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                   child: Text(
-                    'Kamu tidak memiliki jadwal terdekat, silahkan panggil dan jadwalkan grooming kamu dengan groomer kami',
+                    'Kamu tidak memiliki jadwal terdekat, silahkan panggil dan jadwalkan grooming kamu.',
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Poppins',
