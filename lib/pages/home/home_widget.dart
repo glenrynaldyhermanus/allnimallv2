@@ -80,13 +80,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                 Padding(
                   padding:
                       EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 0.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16.0),
-                    child: Image.network(
-                      'https://i.ibb.co/PCt3fWf/banner1.jpg',
-                      width: double.infinity,
-                      height: 180.0,
-                      fit: BoxFit.cover,
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      await launchURL('https://instagram.com/allnimall');
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16.0),
+                      child: Image.network(
+                        'https://i.ibb.co/PCt3fWf/banner1.jpg',
+                        width: double.infinity,
+                        height: 180.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
